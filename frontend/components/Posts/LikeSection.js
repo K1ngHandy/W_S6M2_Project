@@ -6,9 +6,13 @@ import React from 'react';
 
 const LikeSection = props => {
   // 🔥 Make sure the parent of LikeSection is passing the right props!
-  const { likePost, numberOfLikes } = props;
+  const { likePost, numberOfLikes, postId } = props;
   console.log('Like Post in LikeSection:', likePost);
   console.log('Number of Likes:', numberOfLikes);
+
+  const clickHandler = () => {
+    likePost(postId);
+  }
 
   return (
     <div>
@@ -19,7 +23,7 @@ const LikeSection = props => {
         <div className='like-section-wrapper'>
           ❤️
         </div>
-        <div className='like-section-wrapper'>
+        <div className='like-section-wrapper' onClick={clickHandler}>
           💬
         </div>
       </div>
