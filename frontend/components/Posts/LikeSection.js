@@ -7,6 +7,8 @@ import React from 'react';
 const LikeSection = props => {
   // 🔥 Make sure the parent of LikeSection is passing the right props!
   const { likePost, numberOfLikes } = props;
+  console.log('Like Post in LikeSection:', likePost);
+  console.log('Number of Likes:', numberOfLikes);
 
   return (
     <div>
@@ -21,7 +23,7 @@ const LikeSection = props => {
           💬
         </div>
       </div>
-      <p className='like-number'>100 likes</p>
+      <p className='like-number'>{numberOfLikes} likes</p>
     </div>
   );
 };
