@@ -6,12 +6,10 @@ import React from 'react';
 
 const LikeSection = props => {
   // 🔥 Make sure the parent of LikeSection is passing the right props!
-  const { likePost, numberOfLikes, postId } = props;
-  console.log('Like Post in LikeSection:', likePost);
-  console.log('Number of Likes:', numberOfLikes);
+  const { likePost, numberOfLikes } = props;
 
   const clickHandler = () => {
-    likePost(postId);
+    likePost;
   }
 
   return (
