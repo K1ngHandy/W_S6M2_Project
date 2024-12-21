@@ -18,7 +18,6 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   const [posts, setPosts] = useState(dummyData);
   const [searchTerm, setSearchTerm] = useState('');
-  console.log('Search Term:', searchTerm);
 
   const likePost = (postId) => {
     /*
@@ -45,11 +44,11 @@ const App = () => {
     return setSearchTerm(event.target.value)
   }
 
-  const filterPosts = () => {
+  const filteredPosts = () => {
     const normalized = searchTerm.trim().toLowerCase();
     if (!normalized) return posts;
     return posts.filter(post => {
-      return post.username.includes(normalized);
+      return post.username.toLowerCase().includes(normalized);
     })
   }
 
@@ -58,7 +57,7 @@ const App = () => {
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
       <SearchBar onChange={changeHandler} />
-      <Posts likePost={likePost} posts={posts} />
+      <Posts likePost={likePost} posts={filteredPosts()} />
     </div>
   );
 };
